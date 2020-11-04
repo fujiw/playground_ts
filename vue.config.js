@@ -1,3 +1,7 @@
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const WasmPackPlugin = require('@wasm-tool/wasm-pack-plugin')
+
 module.exports = {
   pages: {
     index: {
@@ -6,5 +10,15 @@ module.exports = {
       filename: 'index.html',
       title: 'Index page'
     }
+  },
+  configureWebpack: {
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: path.join(__dirname, 'public/index.html')
+      }),
+      new WasmPackPlugin({
+        crateDirectory: path.resolve(__dirname, './wasm')
+      })
+    ]
   }
 }

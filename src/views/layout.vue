@@ -14,6 +14,10 @@ import Header from '@/components/Header.vue'
 import Navigation from '@/components/Navigation.vue'
 import Footer from '@/components/Footer.vue'
 
+import('../../wasm/pkg').then(mod => {
+  mod.greet('hello')
+})
+
 export default Vue.extend({
   components: {
     Header,
