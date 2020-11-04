@@ -24,3 +24,5 @@ pnpm-debug.log*
 
 
 /pkg
+
+/ts_t/dist/

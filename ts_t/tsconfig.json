@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "commonjs",
+    "sourceMap": true,
+    // "lib": [],                             /* Specify library files to be included in the compilation. */
+    "declaration": true,
+    "outDir": "./dist/",
+    "rootDir": "./src/",
+    "strict": true,
+    "baseUrl": "./",                       /* Base directory to resolve non-absolute module names. */
+    // "paths": {},                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
+    // "types": [],                           /* Type declaration files to be included in compilation. */
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+}
