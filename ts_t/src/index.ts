@@ -1,5 +1,2 @@
-function hello(name: string): string {
-  return `Hello, ${name}`;
-}
-
-console.log(hello('aaaaaaa'));
+export * from './hello'
+export * from './types'
