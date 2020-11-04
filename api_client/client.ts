@@ -1,5 +1,6 @@
 //import axios from 'axios'
 const axios = require('axios')
+const ts_t = require('ts_t')
 
 const get_ip = () => {
   axios
@@ -13,4 +14,5 @@ const get_ip = () => {
     });
 };
 
-get_ip();
+//get_ip();
+ts_t.hello({name: 'hoge', age: 8});
