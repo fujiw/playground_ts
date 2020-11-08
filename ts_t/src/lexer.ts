@@ -1,4 +1,4 @@
-interface Token {}
+import {Token} from "./token";
 
 export class Lexer {
   buf: Buffer
@@ -10,9 +10,9 @@ export class Lexer {
   parse() {
     const text = this.buf.toString().split(' ')
     text.forEach(word => {
-      console.log(word)
+      let token = new Token(word)
+      console.log(token)
     })
-    //console.log(text)
   }
 }
 
