@@ -1,18 +1,64 @@
-import {Token} from "./token";
+import {Token, TokenType} from "./token";
 
 export class Lexer {
-  buf: Buffer
+  buf: string
+  position: number
+  readPosition: number
+  ch: any
 
-  constructor(buf: Buffer) {
+  constructor(buf: string) {
     this.buf = buf
+    this.position = 0
+    this.readPosition = 0
+    this.ch = ''
+
+    this.readChar()
   }
 
-  parse() {
-    const text = this.buf.toString().split(' ')
-    text.forEach(word => {
-      let token = new Token(word)
-      console.log(token)
-    })
+  nextToken(): Token {
+    let token: any
+
+    switch(this.ch) {
+      case "+":
+        token = new Token(this.ch, TokenType.PLUS)
+      case "-":
+        token = new Token(this.ch, TokenType.MINUS)
+      default:
+        if(this.isNumber(this.ch)) {
+          token = new Token(this.ch, TokenType.INT)
+        } else {
+          token = new Token(this.ch, TokenType.EOF)
+        }
+    }
+    this.readChar()
+    return token
   }
+
+  readChar() {
+    if(this.readPosition >= this.buf.length) {
+      // set EOF
+      console.log('SET EOF')
+      this.ch = 'EOF'
+    } else {
+      this.ch = this.buf[this.readPosition]
+    }
+
+    this.position = this.readPosition
+    this.readPosition += 1
+  }
+
+  isNumber(ch: string): Boolean {
+    return '0' <= ch && ch <= '9'
+  }
+
+
+
+//  parse() {
+//    const text = this.buf.toString().split(' ')
+//    text.forEach(word => {
+//      let token = new Token(word)
+//      console.log(token)
+//    })
+//  }
 }
 

@@ -1,17 +1,20 @@
-enum TokenType {
+export enum TokenType {
   ASSIGN = '=',
   PLUS = '+',
   MINUS = '-',
   BANG = '!',
   ASTERISK = '*',
+
+  INT = 'INT',
+  EOF = 'EOF',
 }
 
 export class Token {
-  char: string
-  token_type: TokenType
+  char: string | null
+  token_type: TokenType | null
 
-  constructor(char: string) {
+  constructor(char: string | null, token_type: TokenType) {
     this.char = char
-    this.token_type = TokenType.PLUS
+    this.token_type = token_type
   }
 }
