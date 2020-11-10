@@ -1,9 +1,9 @@
 export enum TokenType {
-  ASSIGN = '=',
-  PLUS = '+',
-  MINUS = '-',
-  BANG = '!',
-  ASTERISK = '*',
+  ASSIGN = 'ASSIGN',
+  PLUS = 'PLUS',
+  MINUS = 'MINUS',
+  BANG = 'BANG',
+  ASTERISK = 'ASTERISK',
 
   INT = 'INT',
   EOF = 'EOF',

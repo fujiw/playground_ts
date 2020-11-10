@@ -19,17 +19,21 @@ export class Lexer {
     let token: any
 
     switch(this.ch) {
-      case "+":
+      case '+':
         token = new Token(this.ch, TokenType.PLUS)
-      case "-":
+        break
+      case '-':
         token = new Token(this.ch, TokenType.MINUS)
+        break
       default:
         if(this.isNumber(this.ch)) {
           token = new Token(this.ch, TokenType.INT)
         } else {
           token = new Token(this.ch, TokenType.EOF)
         }
+        break
     }
+
     this.readChar()
     return token
   }
@@ -37,7 +41,6 @@ export class Lexer {
   readChar() {
     if(this.readPosition >= this.buf.length) {
       // set EOF
-      console.log('SET EOF')
       this.ch = 'EOF'
     } else {
       this.ch = this.buf[this.readPosition]
