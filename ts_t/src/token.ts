@@ -5,7 +5,10 @@ export enum TokenType {
   BANG = 'BANG',
   ASTERISK = 'ASTERISK',
 
+  LET = 'LET',
+
   INT = 'INT',
+  IDENT = 'IDENT',
   EOF = 'EOF',
 }
 
@@ -16,5 +19,9 @@ export class Token {
   constructor(char: string | null, token_type: TokenType) {
     this.char = char
     this.token_type = token_type
+  }
+
+  lookupIdent(ident: string): TokenType {
+    return TokenType.IDENT
   }
 }

@@ -3,7 +3,7 @@ import {Token, TokenType} from "./token"
 
 export class Parser {
   lexer: Lexer
-  errors: object
+  errors?: object
 
   currentToken?: Token
   peekToken?: Token

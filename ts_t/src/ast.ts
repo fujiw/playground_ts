@@ -13,6 +13,22 @@ interface Expression {
   expressionNode(): void
 }
 
-interface Program {
-  Statements: object
+export class Program {
+  Statements?: Array
+
+  constructor() {}
+
+  tokenLiteral(): string {
+    if (this.Statements.length > 0) {
+      return this.Statements[0].tokenLiteral()
+    } else {
+      return ""
+    }
+
+
+
+    return ''
+  }
 }
+
+

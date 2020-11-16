@@ -19,6 +19,9 @@ export class Lexer {
     let token: any
 
     switch(this.ch) {
+      case '=':
+        token = new Token(this.ch, TokenType.ASSIGN)
+        break
       case '+':
         token = new Token(this.ch, TokenType.PLUS)
         break
