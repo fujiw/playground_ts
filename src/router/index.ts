@@ -9,7 +9,7 @@ const routes: Array<RouteConfig> = [
     path: '/',
     name: 'Home',
     components: {
-      default: () => import('@/views/Home'),
+      default: () => import('@/views/Home.vue'),
       layout: Layout
     }
   },
@@ -17,7 +17,7 @@ const routes: Array<RouteConfig> = [
     path: '/about',
     name: 'About',
     components: {
-      default: () => import('@/views/About'),
+      default: () => import('@/views/About.vue'),
       layout: Layout
     }
   }
